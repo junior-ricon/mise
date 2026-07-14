@@ -37,9 +37,6 @@ registry_tmpdir="$(mktemp -d)"
 trap 'rm -rf "$registry_tmpdir"' EXIT
 registry_archive="$registry_tmpdir/registry.tar.zst"
 git archive --format=tar HEAD registry | zstd -q -10 -c >"$registry_archive"
-# Floating clients only need the current registry. Remove legacy and versioned
-# archives so this does not accumulate one object per mise release.
-aws s3 rm "s3://$AWS_S3_BUCKET/registry/" --recursive --exclude "*" --include "*.tar.gz" --include "v*.tar.zst"
 aws s3 cp "$registry_archive" "s3://$AWS_S3_BUCKET/registry/latest.tar.zst" --cache-control "$cache_hour" --no-progress --content-type "application/zstd"
 
 # Upload shell-specific mise.run scripts

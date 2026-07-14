@@ -1,5 +1,20 @@
 # Changelog
 
+## [2026.7.7](https://github.com/jdx/mise/compare/v2026.7.6..v2026.7.7) - 2026-07-14
+
+### 🚀 Features
+
+- **(bootstrap)** support systemd timers by @jdx in [#10984](https://github.com/jdx/mise/pull/10984)
+- **(deps)** add monorepo provider support by @jdx in [#10975](https://github.com/jdx/mise/pull/10975)
+
+### 📦 Registry
+
+- add microsandbox ([aqua:superradcompany/microsandbox](https://github.com/superradcompany/microsandbox)) by @joealden in [#10985](https://github.com/jdx/mise/pull/10985)
+
+### Chore
+
+- **(release)** publish rolling zstd registry archive by @jdx in [#10991](https://github.com/jdx/mise/pull/10991)
+
 ## [2026.7.6](https://github.com/jdx/mise/compare/v2026.7.5..v2026.7.6) - 2026-07-14
 
 ### 🚀 Features
